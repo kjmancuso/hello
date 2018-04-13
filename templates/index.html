@@ -1,6 +1,7 @@
 {% extends "bootstrap/base.html" %}
 
 {% block content %}
+<h4>Flask environment variables</h4>
 <div class="container">
     <table class="table table-hover table-striped table-bordered table-condensed">
         <thead>
@@ -8,6 +9,23 @@
             <th>Value</th>
         </thead>
         {% for k, v in data.items() %}
+        <tr>
+            <td>{{ k }}</td>
+            <td>{{ v }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<h4>Heroku environment variables</h4>
+
+<div class="container">
+    <table class="table table-hover table-striped table-bordered table-condensed">
+        <thead>
+            <th>Key</th>
+            <th>Value</th>
+        </thead>
+        {% for k, v in environ.items() %}
         <tr>
             <td>{{ k }}</td>
             <td>{{ v }}</td>
