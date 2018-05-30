@@ -16,10 +16,13 @@ def index():
     return render_template('index.html', data=data, environ=environ)
 
 
-@app.route('/json')
-def json():
-
-    return jsonify(request=request.environ)
+@app.route('/hello')
+def hello():
+    data = request.environ
+    ra = data['REMOTE_ADDR']
+    xff = data.get('HTTP_X_FORWARDED_FOR', 'no one')
+    hello = 'You are coming from %s forwarded for %s\n' % (ra, xff)
+    return hello, 200
 
 
 if __name__ == '__main__':
