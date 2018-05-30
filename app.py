@@ -21,7 +21,13 @@ def hello():
     data = request.environ
     ra = data['REMOTE_ADDR']
     xff = data.get('HTTP_X_FORWARDED_FOR', 'no one')
-    hello = 'You are coming from %s forwarded for %s\n' % (ra, xff)
+    hello = '''
+Hello, is it me you're looking for?
+I can see it in your eyes
+I can see it in your smile
+
+You are coming from %s forwarded for %s
+''' % (ra, xff)
     return hello, 200
 
 
