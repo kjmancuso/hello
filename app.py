@@ -20,14 +20,13 @@ def index():
 def hello():
     data = request.environ
     ra = data['REMOTE_ADDR']
-    xff = data.get('HTTP_X_FORWARDED_FOR', 'no one')
     hello = '''
 Hello, is it me you're looking for?
 I can see it in your eyes
 I can see it in your smile
 
 You are coming from %s forwarded for %s
-''' % (ra, xff)
+''' % ra
     return hello, 200
 
 
