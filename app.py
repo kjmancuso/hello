@@ -25,7 +25,7 @@ Hello, is it me you're looking for?
 I can see it in your eyes
 I can see it in your smile
 
-You are coming from %s forwarded for %s
+You are coming from %s.
 ''' % ra
     return hello, 200
 
